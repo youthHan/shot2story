@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos">
+  <meta name="keywords"
+    content="Multi-shot videos, Video captioning, Video summarization, VLM, LLM, Large Language Models, Multi-modal learning, Benchmark, Dataset, Instruction tuning, Shot2Story">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://mingfei.info">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://mingfei.info">Mingfei Han</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.xiaojun.ai/">Xiaojun Chang</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://hengcv.github.io/">Heng Wang</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/linjieyang89/">Linjie Yang</a>
+              </span>
+            </div>
+
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>ReLER, AAII, University of Technology Sydney,</span>
+              <span class="author-block"><sup>2</sup>Bytedance Inc.,</span>
+              <span class="author-block"><sup>3</sup>Department of Computer Vision, MBZUAI,</span>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/pdf/xxx"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/xxxx"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/bytedance/Portrait-Mode-Video"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span> -->
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/bytedance/Shot2Story"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=qKz1YJc-2d8"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          In light of large models, we introduce the 'Shot2Story' benchmark: a multi-shot video resource with detailed annotations, ideal for training and validating diverse, temporally distinct video tasks.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <h2 class="subtitle has-text-centered">
+          In light of large models, we introduce the 'Shot2Story' benchmark: a multi-shot video resource with detailed annotations, ideal for training and validating diverse, temporally distinct video tasks.
+        </h2> -->
+        <img src="./static/images/S2S_demo.png" style="width:100%;height:auto;text-align:center;">
+        <!-- <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+          free-viewpoint
+          portraits.
+        </h2> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              A short clip of video may contain progression of multiple events and an interesting story line. A human needs to capture both the event in every shot and associate them together to understand the story behind it. In this work, we present a new multi-shot video understanding benchmark Shot2Story with detailed shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. We design several distinct tasks including single-shot video and narration captioning, multi-shot video summarization, and video retrieval with shot descriptions. Preliminary experiments show some challenges to generate a long and comprehensive video summary.
+            </p>
+          </div>
+        </div>
+      </div>
+      </br>
+      </br>
+      <!--/ Abstract. -->
+<!-- Paper video. -->
+<!-- <div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Video</h2>
+    <div class="publication-video">
+      <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div> -->
+<!--/ Paper video. -->
+      <!-- Contributions. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Shot2Story20k</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/qKz1YJc-2d8?rel=0&amp;showinfo=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          </br>
+          </br>
+          <h2 class="title is-3">Comparison to datasets</h2>
+          <div class="content has-text-justified">
+            <p>
+              High level comparison of our dataset to previous ones. The summary length of ActivityNet and YouCook2 are their combined length of captions in one video. M and G stands for manual and generated, respectively.
+            </p>
+            <img src="./static/images/datasets_comparison.png" style="width:100%;height:auto;text-align:center;">
+          </div>
+          <h2 class="title is-3">What does Shot2Story provide?</h2>
+          <div class="content has-text-justified">
+            <p>
+              We provide 20k videos with diverse topics and contents. Each video is annotated with shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. 
+            </p>
+          </div>
+          <!-- </br> -->
+          </br>
+          <h2 class="title is-3">Baselines and Tasks</h2>
+          <div class="content has-text-justified">
+            <p>
+              We experiment on tasks like video shot captioning, narration captioning, video summarization, video shot retrieval and video question-answering. Papers and codes are on the way. Please check for updates!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Contributions. -->
+
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @misc{han2023shot,
+          title={Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos},
+          author={Han, Mingfei and Chang, Xiaojun and Wang, Heng and Yang, Linjie},
+          url={"http://mingfei.info/shot2story"},
+          year={2023},
+        }
+  </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website design from <a href="https://nerfies.github.io/">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
