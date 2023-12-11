@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos">
+  <meta name="description" content="Shot2Story: A New Benchmark for Comprehensive Understanding of Multi-shot Videos">
   <meta name="keywords"
     content="Multi-shot videos, Video captioning, Video summarization, VLM, LLM, Large Language Models, Multi-modal learning, Benchmark, Dataset, Instruction tuning, Shot2Story">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos</title>
+  <title>Shot2Story: A New Benchmark for Comprehensive Understanding of Multi-shot Videos</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -38,11 +38,43 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .teaser-section {
+        background-color: #f0f0f0; /* Light grey background for contrast */
+    }
+
+    .news-item {
+      background-color: #f0f8ff; /* Light blue background for contrast */
+      border-left: 5px solid #007bff; /* Blue border for emphasis */
+      padding: 10px 20px; /* Padding for spacing */
+      margin: 10px 0; /* Margin for separation between items */
+      font-family: Arial, sans-serif; /* Font styling */
+    }
+
+    .news-icon {
+        color: #ff4500; /* Orange color for the icon */
+        font-size: 20px; /* Larger size for the icon */
+    }
+
+    .news-title {
+        color: #007bff; /* Blue color for the title */
+        font-weight: bold; /* Bold font for the title */
+        font-size: 18px; /* Font size for the title */
+    }
+
+    .news-content {
+        color: #333333; /* Dark grey for content text */
+        font-size: 14px; /* Font size for content */
+        margin-top: 10px; /* Space above the content */
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -59,7 +91,7 @@
         </a>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
 
   <section class="hero">
@@ -67,7 +99,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos</h1>
+            <h1 class="title is-1 publication-title">Shot2Story</h1>
+            <h1 class="title is-3 publication-title">A New Benchmark for Comprehensive Understanding of Multi-shot Videos</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://mingfei.info">Mingfei Han</a>,
@@ -149,19 +182,12 @@
     </div>
   </section>
 
-  <section class="hero teaser">
+  <section class="teaser-section">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h2 class="subtitle has-text-centered">
-          In light of large models, we introduce the Shot2Story-20k benchmark: a multi-shot video resource with detailed textual annotations, ideal for training and validating diverse, temporally distinct video tasks. 
+          In light of large models, we introduce the Shot2Story benchmark: a multi-shot video resource with detailed textual annotations, ideal for training and validating diverse, temporally distinct video tasks. 
         </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
         <!-- <h2 class="subtitle has-text-centered">
           In light of large models, we introduce the 'Shot2Story' benchmark: a multi-shot video resource with detailed annotations, ideal for training and validating diverse, temporally distinct video tasks.
         </h2> -->
@@ -174,6 +200,18 @@
       </div>
     </div>
   </section>
+
+  <section class="hero teaser">
+    <div class="container">
+        <div class="news-item">
+            <span class="news-icon">🌟</span>
+            <span class="news-title"> New Release: <a href="https://github.com/bytedance/Shot2Story">20K version of Shot2Story</a></span>
+            <br>
+            Explore 20k videos with detailed human-annotated summaries, 80k video captions, and 40k narration captions for comprehensive audio-visual analysis.
+        </div>
+        
+    </div>
+</section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -205,7 +243,7 @@
       <!-- Contributions. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Shot2Story20k</h2>
+          <h2 class="title is-3">Shot2Story</h2>
           <div class="publication-video">
             <iframe src="https://www.youtube.com/embed/qKz1YJc-2d8?rel=0&amp;showinfo=0"
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -247,7 +285,7 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>
         @misc{han2023shot,
-          title={Shot2Story20K: A New Benchmark for Comprehensive Understanding of Multi-shot Videos},
+          title={Shot2Story: A New Benchmark for Comprehensive Understanding of Multi-shot Videos},
           author={Han, Mingfei and Chang, Xiaojun and Wang, Heng and Yang, Linjie},
           url={"http://mingfei.info/shot2story"},
           year={2023},
