@@ -116,25 +116,26 @@
               </span>
             </div>
 
-            <!-- <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>ReLER, AAII, University of Technology Sydney,</span>
               <span class="author-block"><sup>2</sup>Bytedance Inc.,</span>
-              <span class="author-block"><sup>3</sup>Department of Computer Vision, MBZUAI,</span>
-            </div> -->
+              <span class="author-block"><sup>3</sup>Data61, CSIRO,</span>
+              <span class="author-block"><sup>4</sup>Department of Computer Vision, MBZUAI</span>
+            </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/pdf/xxx"
+                <span class="link-block">
+                  <a href="https://mingfei.info/files/paper_shot2story20k.pdf"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
-                </span> -->
-                <!-- <span class="link-block">
+                </span>
+                <span class="link-block">
                   <a href="https://arxiv.org/abs/xxxx"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -142,20 +143,20 @@
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span> -->
+                </span>
                 <!-- Code Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://github.com/bytedance/Portrait-Mode-Video"
+                <span class="link-block">
+                  <a href="https://github.com/bytedance/Shot2Story/"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                     </a>
-                </span> -->
+                </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/bytedance/Shot2Story"
+                  <a href="https://github.com/bytedance/Shot2Story/DATA.md"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -173,6 +174,27 @@
                   <span>Video</span>
                 </a>
               </span>
+              <!-- Link to Hugging Face Code -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/your-code-link"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-code"></i>
+                  </span>
+                  <span>Hugging Face Code</span>
+                </a>
+              </span> -->
+              <!-- Link to Hugging Face Space -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/mhan/Shot2Story"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-rocket"></i>
+                  </span>
+                  <span>Space</span>
+                </a>
+              </span>
+
               </div>
 
             </div>
@@ -185,12 +207,26 @@
 
   <section class="hero teaser">
     <div class="container">
-        <div class="news-item">
-            <span class="news-icon">🌟</span>
-            <span class="news-title"> New Release: <a href="https://github.com/bytedance/Shot2Story">20K version of Shot2Story</a></span>
-            <br>
-            Explore 20k videos with detailed human-annotated summaries; 80k video shots with visual captions, and 40k shots with narration captions for comprehensive audio-visual analysis.
-        </div>
+      <div class="news-item">
+          <span class="news-icon" style="color: #4CAF50;">🚀</span>
+          <span class="news-title">Demo Release: <a href="https://huggingface.co/spaces/mhan/Shot2Story" style="color: #007bff;">SUM-shot model</a></span>
+          <br>
+          <span style="font-size: 14px;">Detailed and grounded video summaries are powerful! Please check our demo for SUM-shot model. Chat-SUM-shot model is on the way!</span>
+      </div>
+      <div class="news-item">
+          <span class="news-icon" style="color: #4CAF50;">🚀</span>
+          <span class="news-title">Latest Release: <a href="https://github.com/bytedance/Shot2Story" style="color: #007bff;">Video Summarization & Shot Captioning Code</a></span>
+          <br>
+          <span style="font-size: 14px;">Dive into our codes for video summarization and shot captioning, enhancing visual-audio video analysis. Stay tuned for more tasks and codes coming soon!</span>
+      </div>
+    <!-- </div>
+    <div class="container"> -->
+      <div class="news-item">
+          <span class="news-icon" style="color: #4CAF50;">🌟</span>
+          <span class="news-title"> New Release: <a href="https://github.com/bytedance/Shot2Story/DATA.md" style="color: #007bff;">20K version of Shot2Story</a></span>
+          <br>
+          <span style="font-size: 14px;">Explore 20k videos with detailed human-annotated summaries; 80k video shots with visual captions, and 40k shots with narration captions for comprehensive audio-visual analysis.</span>
+      </div>
         
     </div>
   </section>
@@ -222,13 +258,20 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              A short clip of video may contain progression of multiple events and an interesting story line. A human needs to capture both the event in every shot and associate them together to understand the story behind it. In this work, we present a new multi-shot video understanding benchmark Shot2Story with detailed shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. We design several distinct tasks including single-shot video and narration captioning, multi-shot video summarization, and video retrieval with shot descriptions. Preliminary experiments show some challenges to generate a long and comprehensive video summary.
+              A short clip of video may contain progression of multiple events and an interesting story line. A human needs to capture both the event in every shot and associate them together to understand the story behind it. 
+            </p>
+            <p>
+              In this work, we present a new multi-shot video understanding benchmark Shot2Story with detailed shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. We design several distinct tasks including single-shot video and narration captioning, multi-shot video summarization, and video retrieval with shot descriptions. 
+            </p>
+            <p>
+              Preliminary experiments show some challenges to generate a long and comprehensive video summary.
+              Nevertheless, the generated imperfect summaries can already significantly boost the performance of existing video understanding tasks such as video question-answering, promoting an underexplored setting of video understanding with detailed summaries.
             </p>
           </div>
         </div>
       </div>
-      </br>
-      </br>
+      <br>
+      <br>
       <!--/ Abstract. -->
 <!-- Paper video. -->
 <!-- <div class="columns is-centered has-text-centered">
@@ -249,28 +292,79 @@
             <iframe src="https://www.youtube.com/embed/qKz1YJc-2d8?rel=0&amp;showinfo=0"
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-          </br>
-          </br>
-          <h2 class="title is-3">Comparison to datasets</h2>
+          <br>
+          <div class="content has-text-justified">
+            <p>
+              We provide 20k videos with diverse topics and contents. Each video is annotated with shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. 
+            </p>
+          </div>
+          <br>
+          <!-- <br> -->
+          <h2 class="title is-4">Dataset glance</h2>
+          <div class="content has-text-justified">
+            <p>
+              The dataset includes an average of 4.0 shots per video, resulting in a total of 80k video shots, each with detailed video caption and narration caption annotations. The average length of our video summaries is 201.8, while the average length of a video is 16s.
+            </p>
+            <p>
+              For more comprehensive details, please refer to the plots below.
+            </p>
+            <img src="./static/images/dataset_glance.png" style="width:100%;height:auto;text-align:center;">
+          </div>
+          <br>
+          <h2 class="title is-4">Comparison to datasets</h2>
           <div class="content has-text-justified">
             <p>
               High level comparison of our dataset to previous ones. The summary length of ActivityNet and YouCook2 are their combined length of captions in one video. M and G stands for manual and generated, respectively.
             </p>
             <img src="./static/images/datasets_comparison.png" style="width:100%;height:auto;text-align:center;">
           </div>
-          <h2 class="title is-3">What does Shot2Story provide?</h2>
+          <!-- <h2 class="title is-3">What does Shot2Story provide?</h2>
           <div class="content has-text-justified">
             <p>
               We provide 20k videos with diverse topics and contents. Each video is annotated with shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. 
             </p>
-          </div>
+          </div> -->
           <!-- </br> -->
-          </br>
+          <br>
           <h2 class="title is-3">Baselines and Tasks</h2>
           <div class="content has-text-justified">
             <p>
-              We experiment on tasks like video shot captioning, narration captioning, video summarization, video shot retrieval and video question-answering. Papers and codes are on the way. Please check for updates!
+              We experiment on tasks like single-shot video captioning, narration captioning, video summarization, video shot retrieval and video question-answering. Papers and codes are on the way. Please check for updates!
             </p>
+          </div>
+          
+          <br>
+          <h2 class="title is-4">Single-shot captioning - visual and audio</h2>
+          <div class="content has-text-justified">
+            <p>
+              For each single video shot, we experiment on single-shot video captioning and narration captioning. Model structure is shown below. Visual tokens from the CLIP visual backbone and Q-Former (together with a linear layer from MiniGPT4), along with text prompts, form the input to the Vicuna. ASR input is optional for single-shot video captioning.
+            </p>
+            <img src="./static/images/single_shot_model.png" style="width:100%;height:auto;text-align:center;">
+            <p>
+              For video captioniong, we try visual singals and visual-audio signals as input. See the results below.
+            </p>
+            <img src="./static/images/single_shot_video_cap_res.png" style="width:45%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+              For narration captioniong, we show the results of ASR texts only and our visual-audio model below, which shows the importance of incorporating visual signals.
+            </p>
+            <img src="./static/images/single_shot_narration_cap_res.png" style="width:56%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+          </div>
+
+          <br>
+          <h2 class="title is-4">Video summarization - visual and audio</h2>
+          <div class="content has-text-justified">
+            <p>
+              Multi-shot video summarization is a new task that is distinct from existing video description tasks. It requires the model to understand the shot structure of the given video and to provide a coherently paragraph to describe the progression of events in the different shots. 
+            </p>
+            <p>
+              We propose SUM-shot model, as a powerful baseline for multi-shot video analysis. We sample 4 frames in each video shot and prompting the LLM with frame tokens from different shots, as shown below.
+            </p>
+            <img src="./static/images/sum_shot_model.png" style="width:100%;height:auto;text-align:center;">
+            <p>
+              We experiment with different models, such as the Video-ChatGPT, SUM-shot holistic (which doesn't have shot information), SUM-text (two-stage approach with LLM tuned) and SUM-shot w/o ASR (which doesn't ASR text as input). Experiment shows that shot information and ASR information are crucial to multi-shot video summarization. Moreover, the task poses a challenge for better training scheme, as indicated by superior performance of SUM-text.
+            </p>
+            <img src="./static/images/sum_res.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            
           </div>
         </div>
       </div>
