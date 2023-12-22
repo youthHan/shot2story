@@ -52,6 +52,14 @@
       font-family: Arial, sans-serif; /* Font styling */
     }
 
+    .news-bug-item {
+      background-color: #fffcf0; /* Light blue background for contrast */
+      border-left: 5px solid #f7b605; /* Blue border for emphasis */
+      padding: 10px 20px; /* Padding for spacing */
+      margin: 10px 0; /* Margin for separation between items */
+      font-family: Arial, sans-serif; /* Font styling */
+    }
+
     .news-icon {
         color: #ff4500; /* Orange color for the icon */
         font-size: 20px; /* Larger size for the icon */
@@ -59,6 +67,12 @@
 
     .news-title {
         color: #007bff; /* Blue color for the title */
+        font-weight: bold; /* Bold font for the title */
+        font-size: 18px; /* Font size for the title */
+    }
+
+    .news-bug-title {
+        color: #f7b605; /* Blue color for the title */
         font-weight: bold; /* Bold font for the title */
         font-size: 18px; /* Font size for the title */
     }
@@ -171,7 +185,7 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/bytedance/Shot2Story/DATA.md"
+                  <a href="https://github.com/bytedance/Shot2Story/blob/master/DATA.md"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -212,6 +226,12 @@
 
   <section class="hero teaser">
     <div class="container">
+      <div class="news-bug-item">
+          <span class="news-icon" style="color: #4CAF50;">🌟</span>
+          <span class="news-bug-title">Data instruction: Please find our instructions for using and downloading data <a href="https://github.com/bytedance/Shot2Story/blob/master/DATA.md" style="color: #f7b605;"><u>here</u></a>.</span>
+          <!-- <br> -->
+          <!-- <span style="font-size: 14px;">Detailed and grounded video summaries are powerful! Please check our demo for SUM-shot model. Chat-SUM-shot model is on the way!</span> -->
+      </div>
       <div class="news-item">
           <span class="news-icon" style="color: #4CAF50;">🚀</span>
           <span class="news-title">Demo Release: <a href="https://huggingface.co/spaces/mhan/Shot2Story" style="color: #007bff;">SUM-shot model</a></span>
