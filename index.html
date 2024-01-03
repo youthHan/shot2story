@@ -395,7 +395,21 @@
               We experiment with different models, such as the Video-ChatGPT, SUM-shot holistic (which doesn't have shot information), SUM-text (two-stage approach with LLM tuned) and SUM-shot w/o ASR (which doesn't ASR text as input). Experiment shows that shot information and ASR information are crucial to multi-shot video summarization. Moreover, the task poses a challenge for better training scheme, as indicated by superior performance of SUM-text.
             </p>
             <img src="./static/images/sum_res.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
-            
+          </div>
+
+          <br>
+          <h2 class="title is-4">Zero-shot video question-answering</h2>
+          <div class="content has-text-justified">
+            <p>
+              Since the generated summaries are long and complex, the traditional captioning metrics (B, M, R, C) may not reflect the true quality of the generated summaries. We thus adopt another video understanding task, zero-shot video question-answering (QA), to further evaluate the quality of our generated summaries.
+            <!-- </p>
+            <p> -->
+              Specifically, we directly apply our video summarization model on video QA benchmarks MSRVTT-QA and ActivityNet-QA by splitting the testing videos into video shots and feeding them into the SUM-shot model. The generated summaries and the associated questions are then fed into a Vicuna model to derive the answers.
+            </p>
+            <img src="./static/images/qa_res.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+              As shown in the above table, our model outperforms Video-ChatGPT by a large margin. Our model also follows the zero-shot QA settings since the model only uses Shot2Story20K as training data. Note that MSRVTT contains a large portion of videos with out-of-domain topics such as tv shows and food, while ActivityNet has much longer videos than our training videos. This validates the the robustness and transferability of our model across different topics and longer videos. This surprisingly good result indicates that a comprehensive and detailed video summary is a high quality abstraction of the video, facilitating a wide range of tasks including video QA and video-based conversation.
+            </p>
           </div>
         </div>
       </div>
