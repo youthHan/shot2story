@@ -292,6 +292,12 @@
   <section class="hero teaser">
     <div class="container">
       <div class="news-item">
+          <span class="news-icon" style="color: #4CAF50;">🌟</span>
+          <span class="news-title"> 5 June Release: <a href="https://huggingface.co/datasets/mhan/shot2story" style="color: #007bff;"><u>Shot2Story-QA benchmark</u></a></span>
+          <br>
+          <span style="font-size: 14px;">Explore 11K question-answering pairs for benchmarking video-language models on multi-shot understanding. The quality is ensured by human annotation and verification.</span>
+      </div>
+      <div class="news-item">
           <span class="news-icon" style="color: #4CAF50;">🚀</span>
           <span class="news-title"> Demo Update: <a href="https://huggingface.co/spaces/mhan/Shot2Story" style="color: #007bff;"><u>ChatBot Demo</u></a> and <a href="https://huggingface.co/spaces/mhan/Shot2Story-SUM" style="color: #007bff;"><u>SumBot Demo</u></a></span>
           <br>
@@ -299,7 +305,7 @@
       </div>
       <div class="news-item">
           <span class="news-icon" style="color: #4CAF50;">🌟</span>
-          <span class="news-title"> 24 April Release: <a href="https://huggingface.co/datasets/mhan/shot2story" style="color: #007bff;"><u>134K version (QA on the way)</u></a></span>
+          <span class="news-title"> 24 April Release: <a href="https://huggingface.co/datasets/mhan/shot2story" style="color: #007bff;"><u>134K version (QA on the way): 43K manual + 90K GPT-V</u></a></span>
           <br>
           <span style="font-size: 14px;">Explore 134k videos with detailed text summaries, consisting of 43K human-annotated and 90k GPTV generated data. Moreover, we release 188K video shots with human-annotated visual captions, and 95K shots with narration captions.</span>
       </div>
@@ -362,14 +368,13 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              A short clip of video may contain progression of multiple events and an interesting story line. A human needs to capture both the event in every shot and associate them together to understand the story behind it. 
+              A short clip of video may contain progression of multiple events and an interesting story line. A human need to capture both the event in every shot and associate them together to understand the story behind it. 
             </p>
             <p>
-              In this work, we present a new multi-shot video understanding benchmark Shot2Story with detailed shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. We design several distinct tasks including single-shot video and narration captioning, multi-shot video summarization, and video retrieval with shot descriptions. 
+              In this work, we present a new multi-shot video understanding benchmark \dataset with detailed shot-level captions, comprehensive video summaries and question-answering pairs. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. We design several distinct tasks including single-shot video captioning, multi-shot video summarization, and multi-shot video question answering. 
             </p>
             <p>
-              Preliminary experiments show some challenges to generate a long and comprehensive video summary.
-              Nevertheless, the generated imperfect summaries can already significantly boost the performance of existing video understanding tasks such as video question-answering, promoting an underexplored setting of video understanding with detailed summaries.
+              Preliminary experiments show some challenges to generate a long and comprehensive video summary for multi-shot videos. Nevertheless, the generated imperfect summaries can already achieve competitive performance on existing video understanding tasks such as video question-answering, promoting an under-explored setting of video understanding with detailed summaries.
             </p>
           </div>
         </div>
@@ -405,21 +410,21 @@
           <br>
           <div class="content has-text-justified">
             <p>
-              We provide 20k videos with diverse topics and contents. Each video is annotated with shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. 
+              We provide 43K videos with diverse topics and contents. Each video is annotated with shot-level captions and comprehensive video summaries. To facilitate better semantic understanding of videos, we provide captions for both visual signals and human narrations. 
             </p>
           </div>
           <br>
           <!-- <br> -->
           <h2 class="title is-4">Dataset glance</h2>
           <div class="content has-text-justified">
-            <img src="./static/images/S2S_demo.png" style="width:100%;height:auto;text-align:center;">
+            <img src="./static/images/S2S_demo_wqa.png" style="width:100%;height:auto;text-align:center;">
             <p>
-              The dataset includes an average of 4.0 shots per video, resulting in a total of 80k video shots, each with detailed video caption and narration caption annotations. The average length of our video summaries is 201.8, while the average length of a video is 16s.
+              The dataset includes 43K multi-shot videos, with an average of 4.4 shots per video, resulting in a total of 188k video shots, each with detailed video caption and narration caption annotations. The average length of our video summaries is 218.3, while the average length of a video is 17.1s. In addition, we annotate another 90K multi-shot videos with GPT-V, to facillate better video-language model training.
             </p>
             <p>
               For more comprehensive details, please refer to the plots below.
             </p>
-            <img src="./static/images/dataset_glance.png" style="width:100%;height:auto;text-align:center;">
+            <img src="./static/images/stats-new.png" style="width:100%;height:auto;text-align:center;">
           </div>
           <br>
           <h2 class="title is-4">Comparison to datasets</h2>
@@ -427,7 +432,7 @@
             <p>
               High level comparison of our dataset to previous ones. The summary length of ActivityNet and YouCook2 are their combined length of captions in one video. M and G stands for manual and generated, respectively.
             </p>
-            <img src="./static/images/datasets_comparison.png" style="width:100%;height:auto;text-align:center;">
+            <img src="./static/images/datasets_comparison_new.png" style="width:100%;height:auto;text-align:center;">
           </div>
           <!-- <h2 class="title is-3">What does Shot2Story provide?</h2>
           <div class="content has-text-justified">
@@ -440,27 +445,22 @@
           <h2 class="title is-3">Baselines and Tasks</h2>
           <div class="content has-text-justified">
             <p>
-              We experiment on tasks like single-shot video captioning, narration captioning, video summarization, video shot retrieval and video question-answering. Papers and codes are released. We also provide online demos of ChatBot and SumBot. Please have a look at it!
+              We experiment on tasks like single-shot video captioning, video summarization and video question-answering. Papers and codes are released. We also provide online demos of ChatBot and SumBot. Please have a look at it!
             </p>
           </div>
           
           <br>
-          <h2 class="title is-4">Single-shot captioning - visual and audio</h2>
+          <h2 class="title is-4">Single-shot video captioning - visual and audio</h2>
           <div class="content has-text-justified">
             <p>
-              For each single video shot, we experiment on single-shot video captioning and narration captioning. Model structure is shown below. Visual tokens from the CLIP visual backbone and Q-Former (together with a linear layer from MiniGPT4), along with text prompts, form the input to the Vicuna. ASR input is optional for single-shot video captioning.
+              This task involves generating descriptions for individual video shots, where the target description is a concatenation of the visual-only and narration caption for a video shot. This task requires a joint understanding of visual and speech information. Model structure is shown below. Visual tokens from the CLIP visual backbone and Q-Former (together with a linear layer from MiniGPT4), along with text prompts, form the input to the Vicuna. 
             </p>
             <img src="./static/images/single_shot_model.png" style="width:100%;height:auto;text-align:center;">
             <p>
-              For video captioniong, we try visual singals and visual-audio signals as input. See the results below.
+              We experiment VAST with two settings (V+A+S and V+S. V, A and S stand for vision, audio and subtitle respectively), MiniGPT4-C and VideoChat2-C (C stands for captioning). The models are trained on our Shot2Story single-shot video caption data. See the results below.
             </p>
-            <img src="./static/images/single_shot_video_cap_res.png" style="width:45%; height:auto; display:block; margin-left:auto; margin-right:auto;">
-            <p>
-              For narration captioniong, we show the results of ASR texts only and our visual-audio model below, which shows the importance of incorporating visual signals.
-            </p>
-            <img src="./static/images/single_shot_narration_cap_res.png" style="width:56%; height:auto; display:block; margin-left:auto; margin-right:auto;">
-          </div>
-
+            <img src="./static/images/single_shot_va_cap_res.png" style="width:60%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            
           <br>
           <h2 class="title is-4">Video summarization - visual and audio</h2>
           <div class="content has-text-justified">
@@ -472,9 +472,9 @@
             </p>
             <img src="./static/images/sum_shot_model.png" style="width:100%;height:auto;text-align:center;">
             <p>
-              We experiment with different models, such as the Video-ChatGPT, SUM-shot holistic (which doesn't have shot information), SUM-text (two-stage approach with LLM tuned) and SUM-shot w/o ASR (which doesn't ASR text as input). Experiment shows that shot information and ASR information are crucial to multi-shot video summarization. Moreover, the task poses a challenge for better training scheme, as indicated by superior performance of SUM-text.
+              We experiment with different models, such as the Video-ChatGPT, MiniGPT4-SUM-shot, MiniGPT4-holistic (which doesn't have shot information), SUM-shot w/o ASR (which doesn't ASR text as input), and VideoChat2-SUM-shot (equipped with advanced vision backbone and video pretraining). Experiment shows that shot information and ASR information are crucial to multi-shot video summarization. VideoChat2-SUM-shot further confirms the importance of advanced visual representations.
             </p>
-            <img src="./static/images/sum_res.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <img src="./static/images/sum_res_new.png" style="width:77%; height:auto; display:block; margin-left:auto; margin-right:auto;">
           </div>
 
           <br>
@@ -486,10 +486,10 @@
             <p> -->
               Specifically, we directly apply our video summarization model on video QA benchmarks MSRVTT-QA and ActivityNet-QA by splitting the testing videos into video shots and feeding them into the SUM-shot model. The generated summaries and the associated questions are then fed into a Vicuna model to derive the answers.
             </p>
-            <img src="./static/images/qa_res.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
-            <p>
+            <img src="./static/images/qa_res_new_zr.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <!-- <p>
               As shown in the above table, our model outperforms Video-ChatGPT by a large margin. Our model also follows the zero-shot QA settings since the model only uses Shot2Story20K as training data. Note that MSRVTT contains a large portion of videos with out-of-domain topics such as tv shows and food, while ActivityNet has much longer videos than our training videos. This validates the the robustness and transferability of our model across different topics and longer videos. This surprisingly good result indicates that a comprehensive and detailed video summary is a high quality abstraction of the video, facilitating a wide range of tasks including video QA and video-based conversation.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
