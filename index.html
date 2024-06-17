@@ -478,18 +478,29 @@
           </div>
 
           <br>
-          <h2 class="title is-4">Zero-shot video question-answering</h2>
+          <h2 class="title is-4">Multi-shot video question-answering</h2>
           <div class="content has-text-justified">
             <p>
-              Since the generated summaries are long and complex, the traditional captioning metrics (B, M, R, C) may not reflect the true quality of the generated summaries. We thus adopt another video understanding task, zero-shot video question-answering (QA), to further evaluate the quality of our generated summaries.
-            <!-- </p>
-            <p> -->
-              Specifically, we directly apply our video summarization model on video QA benchmarks MSRVTT-QA and ActivityNet-QA by splitting the testing videos into video shots and feeding them into the SUM-shot model. The generated summaries and the associated questions are then fed into a Vicuna model to derive the answers.
+              Generated video summaries are supposed to be grounded and detailed, covering rich elements like event progression, holistic topics and audio elements, making them suitable for other vision tasks such as video question-answering. Existing works uses image or video frame captions as input to an LLM to generate question responses. However, little work has been done for the capacity of video summaries. We directly apply our video summarization model on video QA benchmarks, i.e. MSRVTT-QA, ActivityNet-QA and our Shot2Story-QA.
             </p>
-            <img src="./static/images/qa_res_new_zr.png" style="width:67%; height:auto; display:block; margin-left:auto; margin-right:auto;">
-            <!-- <p>
-              As shown in the above table, our model outperforms Video-ChatGPT by a large margin. Our model also follows the zero-shot QA settings since the model only uses Shot2Story20K as training data. Note that MSRVTT contains a large portion of videos with out-of-domain topics such as tv shows and food, while ActivityNet has much longer videos than our training videos. This validates the the robustness and transferability of our model across different topics and longer videos. This surprisingly good result indicates that a comprehensive and detailed video summary is a high quality abstraction of the video, facilitating a wide range of tasks including video QA and video-based conversation.
-            </p> -->
+            <p>
+              Specifically, we first split the testing videos into video shots, and then feed the videos into our SUM-shot models. The generated summaries and the associated questions are then fed into a Vicuna model to derive the answers. We leverage the gpt-3.5-turbo model to generate a binary decision on whether the answer is correct.
+            </p>
+            <img src="./static/images/s2s_qa_results.png" style="width:95%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+              we benchmark existing and our proposed video summary models on Shot2Story-QA. Specifically, four popular video-VLMs are compared, i.e., Video-ChatGPT, LLaMA-VID, VideoChat2 and Video-LLaVA. The predicted summaries of MiniGPT4-SUM-shot and VideoChat2-SUM-shot are used to tackle the QA task with the same configuration as zero-shot VQA. Accuracies on temporal-related, multi-shot holistic understanding and audio-related are reported, with the “overall” metric showing the average score from these three sub-tasks. The current video-VLMs present unsatisfying results, potentially due to two factors: (1) The current models does not have audio or ASR as input, lacking capacity with audio-related understanding. (2) Current models do not have training data with detailed descriptions based on multi-shot videos, weakening their performance on holistic understanding and temporal modeling. For our models, VideoChat2-SUM-shot achieves an overall score of 40.5, surpassing the compared models and MiniGPT4-SUM-shot on all three subtasks. This performance underscores the benefits of video pretraining and the advanced visual backbone of VideoChat2. These baseline results highlight the complexities and demanding nature of our Shot2Story-QA task.
+            </p>
+          </div>
+          <br>
+          <h2 class="title is-4">Zero-shot video question-answering </h2>
+          <div class="content has-text-justified">
+            <p>
+              As shown in the below table, our results with VideoChat2-SUM-shot surpass 5 out of 6 existing video-VLMs on MSRVTT-QA and 4 out of 6 existing models on ActivityNet-QA. Furthermore, our results are comparable to the SOTA performance on MSRVTT-QA with Video-LLaVA. 
+            </p>
+            <img src="./static/images/qa_res_new_zr.png" style="width:85%; height:auto; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+              Note that these models require extensive instruction-tuning data to learn to directly generate answers from visual features and the text prompt, whereas our model bypasses instruction tuning by distilling the video information into a summary. Our model also follows the zero-shot QA setting since the model only uses Shot2Story as training data. Note that MSRVTT contains a large portion of videos with out-of-domain topics such as TV shows and food, while ActivityNet has much longer videos than our training videos. This validates the robustness and transferability of our model across different topics and longer videos. This surprisingly good result indicates that a comprehensive and detailed video summary is a high-quality abstraction of the video,facilitating a wide range of tasks including video QA and video-based conversation
+            </p>
           </div>
         </div>
       </div>
